@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="btcCalc" ng-controller="btcCont">
+
+  <head>
+    <title>BTC Investment Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="jumbotron shadow-sm">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offest-3">
+            <br><br>
+          </div>
+        </div>
+        <div id="currPrice">1 BTC = {{currRate | currency }}</div>
+
+
+        <div class="row">
+          <div class= "col-sm-12 col-sm-offset-3">
+            <div class= "col-sm-12">
+              <br>
+              <form role = "form">
+                <div style="font-size: 14px; letter-spacing: 1px; text-transform: uppercase; text-align: center;">
+                  <label for="starting-investment"> 💰 How much would I make if I invested: </label>
+                  <input type="number" ng-model="initialAmt" class="form-control" placeholder="{{initialAmt}}">
+
+                </div>
+            </form>
+              <br>
+            </div>
+           
+          </div>
+        </div>
+
+          <div class = "row">
+            <div class="col-sm-12 col-sm-offset-3">
+              <br><br>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>If 1 BTC equals</th>
+                    <th>INITIAL INVESTMENT</th>
+                    <th>PROFIT</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>$50,000</td>
+                    <td>{{ newAmt(50000) | currency }}</td>
+                    <td>{{ profit(50000) | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td>$100,000</td>
+                    <td>{{ newAmt(100000) | currency }}</td>
+                    <td>{{ profit(100000) | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td>$150,000</td>
+                    <td>{{ newAmt(150000) | currency }}</td>
+                    <td>{{ profit(150000) | currency }}</td>
+                  </tr>
+                  <tr>
+                    <td>$300,000</td>
+                    <td>{{ newAmt(300000) | currency }}</td>
+                    <td>{{ profit(300000) | currency }}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+    </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-nvd3-directives/0.0.7/angularjs-nvd3-directives.min.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
