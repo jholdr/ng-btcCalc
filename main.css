@@ -6,7 +6,9 @@ html, body {
 
 
 .jumbotron{
-  height: 50%;
+  height: auto;
+
+  padding: 40px;
   background-color: #cfdce8;
   margin-left: 10%;
   margin-right: 10%;
